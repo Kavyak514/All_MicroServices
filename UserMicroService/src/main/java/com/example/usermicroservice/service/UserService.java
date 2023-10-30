@@ -2,7 +2,6 @@ package com.example.usermicroservice.service;
 
 import com.example.usermicroservice.entity.User;
 import com.example.usermicroservice.repository.UserRepository;
-import com.example.usermicroservice.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
