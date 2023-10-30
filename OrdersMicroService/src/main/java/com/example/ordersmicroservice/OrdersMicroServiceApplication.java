@@ -9,13 +9,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableDiscoveryClient
 public class OrdersMicroServiceApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(OrdersMicroServiceApplication.class, args);
-    }
-
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
     }
 }

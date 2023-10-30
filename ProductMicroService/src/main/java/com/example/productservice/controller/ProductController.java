@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/product")
 public class ProductController {
@@ -23,5 +25,10 @@ public class ProductController {
     @PostMapping("/createUser")
     public User createUser() {
         return userService.makePostRequest();
+    }
+
+    @GetMapping("/getUser")
+    public List<User> makeGetRequest() {
+        return userService.makeGetRequest();
     }
 }
