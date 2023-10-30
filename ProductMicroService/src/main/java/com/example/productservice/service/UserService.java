@@ -28,6 +28,8 @@ public class UserService {
         this.restTemplate = restTemplate;
     }
 
+    //GetForEntity is used for returning single Object for List use exchange method.
+
     public List<User> makeGetRequest() {
         String getUserUrl = getUrl;
         ResponseEntity<List<User>> response = restTemplate.exchange(getUserUrl, HttpMethod.GET, null, new ParameterizedTypeReference<List<User>>() {});
