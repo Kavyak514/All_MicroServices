@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class UserService {
+public class RestTemplateService {
 
     private final RestTemplate restTemplate;
 
@@ -27,7 +27,7 @@ public class UserService {
     private String getUrl;
 
     @Autowired
-    public UserService(RestTemplate restTemplate) {
+    public RestTemplateService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
@@ -35,7 +35,8 @@ public class UserService {
 
     public List<User> makeGetRequest() {
         String getUserUrl = getUrl;
-        ResponseEntity<List<User>> response = restTemplate.exchange(getUserUrl, HttpMethod.GET, null, new ParameterizedTypeReference<List<User>>() {});
+        ResponseEntity<List<User>> response = restTemplate.exchange(getUserUrl, HttpMethod.GET, null, new ParameterizedTypeReference<List<User>>() {
+        });
         if (response.getStatusCode().is2xxSuccessful()) {
             return response.getBody();
         } else {
